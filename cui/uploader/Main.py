@@ -63,8 +63,8 @@ class Main:
         web.log.Log.Log().Logger.info('サブコマンド    n:終了 a:集計 e:編集 d:削除 i:Issue作成')
 
     def __Commit(self):
-        if hasattr(self.__args, 'message'):
-            self.__commiter.AddCommitPushIssue(self.__args.message)
+        if hasattr(self.__args, 'messages'):
+            self.__commiter.AddCommitPushIssue(self.__args.messages)
             self.__agg.Show()
         else:
             while (True):
