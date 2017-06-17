@@ -20,6 +20,29 @@ add,commit,pushだけでなくissue作成とクローズも一度に行うよう
     * [Two-Factor認証](https://github.com/settings/two_factor_authentication/intro)
     * [API v3](https://developer.github.com/v3/)
 
+# コマンド
+
+メッセージを付与することで、コミットメッセージとIssue登録を同時に行う。
+
+```sh
+$ GitHubUploader.py ... -m "コミットメッセージとIssueで兼用のメッセージ。"
+```
+
+commitメッセージのほうは`fix #Issue番号 指定メッセージ`のようになる。
+
+複数行も可能。
+
+```sh
+$ GitHubUploader.py ... -m "1行目" -m "" -m "3行目。" -m "4行目。"
+```
+
+2行目が空行なのは、gitメッセージの書式である。1行目が概要、2行目が空行、3行目以降が詳細。なお、2行目の空白を忘れてしまってもうまく動作するようにしてある。
+
+* GitHubUploader.py
+    * `-m`
+        * -m "1行目" -m "" -m "3行目。" -m "4行目。"
+            * commit
+
 # ライセンス
 
 このソフトウェアはCC0ライセンスである。
